@@ -1,0 +1,94 @@
+
+   
+      <div class="text-center">
+        <h1 style="color: orangered;margin-top: 10px;font-style: italic"><u>SELLS CRUD SYSTEM</u> </h1>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-5">
+        <form class=" text-white" style="opacity: 0.9; padding: 10px;">
+    
+          <div class="form-group row" [hidden]="isdisable">
+            <label for="colFormLabel" class="col-sm-3 col-form-label"style="font-size: 20px;font-weight: bold;color:yellow;">Medic_Name</label>
+            <div class="col-sm-8" >
+              <select  (change)="onchane(mname)"  class="form-control" [(ngModel)]="editvalue" id="colFormLabel"  placeholder="Medicine_Name" [ngModelOptions]="{standalone: true}"  #mname>
+               
+                <option *ngFor="let all of products; let i=index" [value]="i"  >{{all.name}} </option>
+              </select>
+            </div>
+          </div><br>
+          <div class="form-group row">
+            <label for="colFormLabel" class="col-sm-3 col-form-label" style="font-size: 20px;font-weight: bold;color:yellow; ">Medic_Id</label>
+            <div class="col-sm-8">
+              <input  type="text" class="form-control" id="colFormLabel" placeholder="medicine Id" #mid>
+            </div>
+          </div><br>
+         
+          <div class="form-group row">
+            <label for="colFormLabel" class="col-sm-3 col-form-label" style="font-size: 20px;font-weight: bold;color:yellow;">Quentity</label>
+            <div class="col-sm-8">
+              <input type="number" class="form-control" id="colFormLabel" (keyup)="ontotal(mquentity,mprice)" placeholder="Quentity" #mquentity>
+            </div>
+          </div><br>
+          <div class="form-group row">
+            <label for="colFormLabel" class="col-sm-3 col-form-label" style="font-size: 20px;font-weight: bold;color:yellow;" >Unit_Price</label>
+            <div class="col-sm-8">
+              <input type="number" class="form-control" id="colFormLabel" (keyup)="ontotal2(mquentity,mprice)" placeholder="Unit_Price" #mprice>
+            </div>
+          </div><br>
+          <div class="form-group row">
+            <label for="colFormLabel" class="col-sm-3 col-form-label" style="font-size: 20px;font-weight: bold;color:yellow;">Total</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="colFormLabel" placeholder="Total" #muse>
+            </div>
+          </div>
+          <br>
+          <div class="text-center">
+          <button style="width: 100px; border-radius: 20px;background-color: green;" type="button" class="btn btn-success" (click)="onAdd(mid,mquentity,mprice,muse)">{{editMode? 'Update':'Sell'}}</button>
+      </div>
+        </form>
+      </div>
+
+      <div class="col-md-6 " >
+        <div data-spy="scroll" style="height: 370px;overflow:auto;opacity: 0.9;">
+          <form  style="" >
+            <table class="table table-bordered table-dark "  >
+              <thead>
+                <tr class="text-center">
+                 
+       
+                  <th scope="col">Medi_Id</th>
+                  <th scope="col">Medi_Name</th>
+                  <th scope="col">Quentity</th>
+                  <th scope="col">Unit_Price</th>
+                  <th scope="col">Total</th>
+                  <th scope="col" colspan="2">Action</th>
+                
+         
+                </tr>
+              </thead>
+              <tbody >
+                <tr  class="text-center" *ngFor="let p of selproducts; let i=index"  >
+                  
+                  <td>{{p.id}}</td>
+                  <td>{{p.name}}</td>
+                  <td>{{p.quentity}}</td>
+                  <td>{{p.price}}</td>
+                  <td>{{p.total}}</td>
+                  
+                 <td> <button  type="button" class="btn btn-warning" (click)="onedit(i)">Edit</button></td>
+                 <td> <button  type="button" class="btn btn-danger" (click)="ondelete(i)">Delet</button></td>
+                <!-- <td> <a  class="text-warning" (click)="onedit(i)"><i class="far fa-trash-alt"></i></a></td>
+                  <td> <a  class="text-warning" (click)="onedit(i)"><i class="far fa-trash-alt"></i></a></td>
+                -->
+                </tr>
+  
+              </tbody>
+          </table>
+          </form>
+        </div>
+       
+      </div>
+    </div>
+
+   

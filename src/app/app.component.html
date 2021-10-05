@@ -1,0 +1,37 @@
+
+<particles [params]="myParams" [style]="myStyle" [width]="width" [height]="height"></particles>
+<div class="" style="opacity: 0.85;" >
+  <nav class="navbar navbar-expand-lg bg-success  " *ngIf="header">
+  
+    <div class=" " >
+      <ul class="navbar-nav " style="padding-left:10px ; font-size: 20px;">
+      
+        
+        <li class="nav-item active" style="padding-left:10px ; " >
+          <img src="https://seeklogo.com/images/P/pharmacy-logo-DF4F78C50E-seeklogo.com.png"style="border-radius: 40%; width:70px;height: 70px; " class="nav-link" > 
+        </li>
+       
+        <li class="nav-item active" style="padding-left:40px ;padding-top: 10px;" >
+          <a style="text-decoration: none; color: whitesmoke;" class="nav-link" routerLink="/home">Home </a>
+        </li>
+        <li class="nav-item" style="padding-left:30px ;padding-top: 10px;">
+          <a style="text-decoration: none; color: whitesmoke;" class="nav-link" routerLink="/product">AddProduct</a>
+        </li>
+        <li class="nav-item" style="padding-left:30px ;padding-top: 10px;">
+          <a style="text-decoration: none; color: whitesmoke;" class="nav-link" routerLink="/sell">SellProduct</a>
+        </li>
+        <li class="nav-item " style="padding-left:30px ;padding-top: 10px;">
+          <a style="text-decoration: none; color: whitesmoke;" class="nav-link " routerLink="/calculate">Statistics</a>
+        </li>
+       
+        <li class="nav-item active " style=" margin-left: 75%;" >
+          <img src="../assets/image/mamun pp pic sm.jpg"style="border-radius: 50%; width:65px;height: 65px; " class="nav-link" > 
+        </li>
+        <li class="nav-item " style=" padding-top: 15px;">
+          <button type="button"  style="border-radius: 20px;font-weight: bolder;" class="nav-link btn btn-danger btn-sm text-white" (click)="onlogout()">Logout</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<router-outlet></router-outlet>

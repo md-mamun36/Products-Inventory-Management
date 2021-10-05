@@ -1,0 +1,58 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "user": [
+    {
+      "name": "mamun",
+      "email": "mdmamun4372@gmail.com",
+      "password": "mamun2301"
+    }
+  ],
+  "product": [
+    {
+      "id": 102,
+      "name": "napa",
+      "quentity": 50,
+      "price": 5,
+      "use": "pain"
+    },
+    {
+      "id": "103",
+      "name": "seclo",
+      "quentity": "45",
+      "price": "5",
+      "use": "gastic"
+    }
+  ],
+  "sells": [
+    {
+      "id": "102",
+      "name": "napa",
+      "quentity": "6",
+      "price": "5",
+      "total": "30"
+    },
+    {
+      "id": "103",
+      "name": "seclo",
+      "quentity": "4",
+      "price": "5",
+      "total": "20"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
